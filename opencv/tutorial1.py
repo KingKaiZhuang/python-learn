@@ -1,22 +1,39 @@
-import cv2 
-import numpy as np
-import random
+# pip install opencv-python
 
-img = cv2.imread('test1.jpg')
-# print(img.shape)
+import cv2
+
+# 讀取照片
+# img = cv2.imread('colorcolor.jpg')
 
 # img = cv2.resize(img,(0,0),fx=0.5,fy=0.5)
+
 # cv2.imshow('img',img)
 # cv2.waitKey(0)
 
-# img = np.empty((300,300,3),np.uint8)
+# 讀取影片
 
-# for row in range(300):
-#     for col in range(img.shape[1]):
-#         img[row][col] = [random.randint(0,255),random.randint(0,255),random.randint(0,255)]
+# cap = cv2.VideoCapture('thumb.mp4')
 
-newimg = img[:150,200:400]
+# while True:
+#     ret,frame = cap.read()
+#     if ret:
+#         frame = cv2.resize(frame,(0,0),fx=0.5,fy=0.5)
+#         cv2.imshow('video',frame)
+#     else:
+#         break
+#     if cv2.waitKey(10) == ord('q'):
+#         break
 
-cv2.imshow('img',img)
-cv2.imshow('newimg',newimg)
-cv2.waitKey(0)
+# 開啟相機
+
+cap = cv2.VideoCapture(0)
+
+while True:
+    ret,frame = cap.read()
+    if ret:
+        frame = cv2.resize(frame,(0,0),fx=0.5,fy=0.5)
+        cv2.imshow('video',frame)
+    else:
+        break
+    if cv2.waitKey(10) == ord('q'):
+        break
