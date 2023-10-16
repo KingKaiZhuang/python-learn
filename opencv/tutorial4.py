@@ -38,7 +38,7 @@ while True:
     result = cv2.bitwise_and(img,img,mask=mask)
 
     cv2.imshow('img', img)
-    cv2.imshow('hsv', hsv)
+    # cv2.imshow('hsv', hsv)
     cv2.imshow('mask',mask)
-    cv2.imshow('result',result)
+    # cv2.imshow('result',result)
     cv2.waitKey(1)
