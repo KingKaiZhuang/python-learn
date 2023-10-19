@@ -4,7 +4,7 @@ cap = cv2.VideoCapture(0)
 while(True):
     ret, frame = cap.read()
     im_grey = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    t, binary_img = cv2.threshold(im_grey, 145, 200, cv2.THRESH_BINARY_INV)
+    t, binary_img = cv2.threshold(im_grey, 145, 255, cv2.THRESH_BINARY_INV)
  
     contours, hierarchy = cv2.findContours(binary_img, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     o1 = cv2.drawContours(frame, contours, -1, (0, 0, 255), 5)
